@@ -1,0 +1,43 @@
+---
+title: "notes"
+author: "Madina"
+date: "2025-01-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+## Running Code
+
+```{r}
+1 + 1
+x <- 6
+y <- 8
+z <- x+y
+print (z)
+
+```
+
+You can add options to executable code like this
+
+```{r}
+warning=FALSE
+library(tidyverse)
+d <- read_csv("/Users/madinaseidualy/Desktop/Data_Analyses/data-wrangling.csv",col_names = TRUE)
+
+fbm<-d$Body_mass_female_mean
+fbz<-d$Brain_Size_Species_Mean
+mean(fbm, na.rm = TRUE)
+mean(fbz, na.rm = TRUE)
+plot(fbm,fbz)
+plot(log(fbm),log(fbz))
+plot(log(fbz),log(fbm))
+
+```
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
